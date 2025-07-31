@@ -7,12 +7,12 @@ const Sidebar = ({ currentPage, setCurrentPage }) => {
   const location = useLocation();
 
   const menuItems = [
-    { name: 'Dashboard', icon: Home, path: '/dashboard' },
-    { name: 'Rooms', icon: Building, path: '/rooms' },
-    { name: 'Bookings', icon: Calendar, path: '/bookings' },
-    { name: 'Users', icon: Users, path: '/users' },
-    { name: 'Complaints', icon: AlertTriangle, path: '/complaints' },
-    { name: 'Feedback', icon: MessageSquare, path: '/feedback' }
+    { name: 'Dashboard', icon: Home, path: '/admin/dashboard' },
+    { name: 'Rooms', icon: Building, path: '/admin/rooms' },
+    { name: 'Bookings', icon: Calendar, path: '/admin/bookings' },
+    { name: 'Users', icon: Users, path: '/admin/users' },
+    { name: 'Complaints', icon: AlertTriangle, path: '/admin/complaints' },
+    { name: 'Feedback', icon: MessageSquare, path: '/admin/feedback' }
   ];
 
   const handleNavigation = (item) => {
@@ -36,7 +36,7 @@ const Sidebar = ({ currentPage, setCurrentPage }) => {
         {/* Navigation */}
         <nav className="space-y-2 mb-8">
           {menuItems.map((item) => {
-            const isActive = location.pathname === item.path || (location.pathname === '/' && item.path === '/dashboard');
+            const isActive = location.pathname === item.path || (location.pathname === '/admin' && item.path === '/admin/dashboard');
             const IconComponent = item.icon;
             
             return (
